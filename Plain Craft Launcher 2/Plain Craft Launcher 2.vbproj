@@ -1009,5 +1009,11 @@
       <Version>6.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LaunchLight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LaunchDark.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

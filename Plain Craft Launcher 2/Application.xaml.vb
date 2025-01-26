@@ -99,7 +99,11 @@ WaitRetry:
             ToolTipService.VerticalOffsetProperty.OverrideMetadata(GetType(DependencyObject), New FrameworkPropertyMetadata(4.0))
             '设置初始窗口
             If Setup.Get("UiLauncherLogo") Then
-                FrmStart = New SplashScreen("Images\icon.ico")
+                If Setup.Get("UiDarkMode") Then
+                    FrmStart = New SplashScreen("Images\LaunchDark.png")
+                Else
+                    FrmStart = New SplashScreen("Images\LaunchLight.png")
+                End If
                 FrmStart.Show(False, True)
             End If
             '日志初始化
