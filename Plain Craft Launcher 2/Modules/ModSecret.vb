@@ -51,7 +51,7 @@ Friend Module ModSecret
             Environment.[Exit](Result.Cancel)
         End If
         '开源版本提示
-        If Convert.ToBoolean(ReadReg("UiLauncherCEHint", "True")) Then
+        If Setup.Get("UiLauncherCEHint") Then
             MyMsgBox($"你正在使用来自 PCL-Community 的 PCL2 社区版本，遇到问题请不要向官方仓库反馈！
 PCL-Community 及其成员与龙腾猫跃无从属关系，且均不会为您的使用做担保。
 
@@ -235,7 +235,7 @@ PCL-Community 及其成员与龙腾猫跃无从属关系，且均不会为您的
     Public ThemeDontClick As Integer = 0
 
     Public Sub ThemeRefresh(Optional NewTheme As Integer = -1)
-        Hint("该版本中不包含主题功能……")
+        'Hint("该版本中不包含主题功能……")
     End Sub
     Public Sub ThemeRefreshMain()
         RunInUi(
@@ -358,7 +358,8 @@ PCL-Community 及其成员与龙腾猫跃无从属关系，且均不会为您的
         IsUpdateWaitingRestart = True
         Try
             Dim fileName As String = Path + "PCL\Plain Craft Launcher 2.exe"
-            Dim text As String = String.Concat(New String() {"--update ", Process.GetCurrentProcess().Id, " """, AppDomain.CurrentDomain.SetupInformation.ApplicationName, """ """, AppDomain.CurrentDomain.SetupInformation.ApplicationName, """ ", TriggerRestartAndByEnd})
+            ' id old new restart
+            Dim text As String = String.Concat(New String() {"--update ", Process.GetCurrentProcess().Id, " """, PathWithName, """ """, fileName, """ ", TriggerRestartAndByEnd})
             Log("[System] 更新程序启动，参数：" + text, LogLevel.Normal, "出现错误")
             Process.Start(New ProcessStartInfo(fileName) With {.WindowStyle = ProcessWindowStyle.Hidden, .CreateNoWindow = True, .Arguments = text})
             If TriggerRestartAndByEnd Then
