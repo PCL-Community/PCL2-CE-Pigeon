@@ -187,6 +187,7 @@ ToolTip="如果你禁用了硬件加速，那么建议你调低最高动画帧�
                         <local:MyButton Grid.Column="2" x:Name="BtnSystemMirrorChyanGetKey" MinWidth="100" Text="获取 Mirror 酱 CDK" Padding="13,0" Margin="0,0,20,0" ToolTip="获取用于 Mirror 酱服务器请求的 CDK"/>
                         <local:MyButton Grid.Column="0" Grid.Row="2" x:Name="BtnSystemSettingExp" MinWidth="100" Text="导出设置" Padding="13,0" Margin="0,0,20,0"/>
                         <local:MyButton Grid.Column="1" Grid.Row="2" x:Name="BtnSystemSettingImp" MinWidth="100" Text="导入设置" Padding="13,0" Margin="0,0,20,0"/>
+                        <local:MyButton Grid.Column="2" Grid.Row="2" x:Name="BtnSystemGreen" MinWidth="100" Text="切换到绿色模式" Padding="13,0" Margin="0,0,20,0"/>
                     </Grid>
                 </Grid>
             </local:MyCard>

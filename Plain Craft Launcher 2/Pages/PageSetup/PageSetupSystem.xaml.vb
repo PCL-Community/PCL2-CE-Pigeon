@@ -266,4 +266,8 @@
 
 #End Region
 
+    Private Sub BtnSystemGreen_Click(sender As Object, e As EventArgs) Handles BtnSystemGreen.Click
+        MyMsgBox($"你正在选择切换到绿色模式。{vbCrLf}PCL 将会将一切配置文件（包括启动器设置、Minecraft 档案文件）存放在当前目录的 PCL 文件夹下，而不是系统 AppData 文件夹。{vbCrLf}切换时，你的全局配置将不会被继承。", "切换到绿色模式", "继续", "取消")
+    End Sub
+
 End Class
